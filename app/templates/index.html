@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1 class="animate-title">ML Code Review</h1>
+        <p class="subtitle">Intelligent Code Analysis with Machine Learning</p>
+    </div>
+    
+    <div class="code-section">
+        <div class="editor-container">
+            <div class="editor-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="file-name">Python Code</span>
+            </div>
+            <div class="editor-wrapper">
+                <div class="line-numbers" id="line-numbers"></div>
+                <textarea id="code-input" placeholder="Paste your code here..." spellcheck="false"></textarea>
+            </div>
+        </div>
+        <div class="button-group">
+            <button class="analyze-btn" onclick="analyzeCode()">
+                <span class="btn-text">Analyze Code</span>
+                <div class="spinner hidden"></div>
+            </button>
+            <button class="clear-btn" onclick="clearCode()">Clear</button>
+        </div>
+    </div>
+
+    <div id="results" class="results">
+        <!-- Results will be displayed here -->
+    </div>
+</div>
+
+<!-- Add Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+{% endblock %} 
